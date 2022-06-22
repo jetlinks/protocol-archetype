@@ -12,19 +12,17 @@ import reactor.core.publisher.Mono;
 
 public class MyProtocolSupportProvider implements ProtocolSupportProvider {
 
-
     @Override
     public Mono<? extends ProtocolSupport> create(ServiceContext context) {
         CompositeProtocolSupport support = new CompositeProtocolSupport();
         support.setId("${artifactId}");
         support.setName("${artifactId}");
 
-        //设置接入的文档说明
-        support.setDocument(DefaultTransport.MQTT,
-                            "document.md",
-                            MyProtocolSupportProvider.class.getClassLoader());
+        //TODO 配置编解码
+        //support.addMessageCodecSupport(...);
 
-
+        //设置配置定义信息
+        //support.addConfigMetadata(...);
 
         return Mono.just(support);
     }
