@@ -9,7 +9,7 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <jetlinks.core.version>1.2.0-SNAPSHOT</jetlinks.core.version>
+        <jetlinks.core.version>1.2.2-SNAPSHOT</jetlinks.core.version>
     </properties>
 
     <build>
@@ -71,13 +71,17 @@
             <id>aliyun-nexus</id>
             <name>aliyun</name>
             <url>https://maven.aliyun.com/nexus/content/groups/public/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
         </repository>
 
         <repository>
-            <id>hsweb-nexus</id>
+            <id>jetlinks-nexus</id>
             <name>Nexus Release Repository</name>
-            <url>https://nexus.hsweb.me/content/groups/public/</url>
+            <url>https://nexus.jetlinks.cn/content/groups/public/</url>
             <snapshots>
+                <enabled>true</enabled>
                 <updatePolicy>always</updatePolicy>
             </snapshots>
         </repository>
